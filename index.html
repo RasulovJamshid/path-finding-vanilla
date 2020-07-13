@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<script type="text/javascript" src="js/astar.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
+	
 
 </head>
 
@@ -15,31 +15,15 @@
 			<div id="root"></div>
 		</div>
 		 <button onclick="actionListener()" type="button" class="btn btn-primary">Search</button>
+		 <button onclick="clearColumns()" type="button" class="btn btn-primary">Clear</button>
 		<div id="btnGroup"  class="mx-auto" class="btn-group" role="group" aria-label="Basic example">
 		  <button type="button" name="btn1" class="btn btn-secondary">Start</button>
 		  <button type="button" name="btn2" class="btn btn-warning">End</button>
 		  <button type="button" name="btn3"class="btn btn-secondary">Wall</button>
+		  <button type="button" name="btn4"class="btn btn-secondary">Erase</button>
+
 		</div>
 
-
+	<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
-
-
-
-<!-- document.addEventListener("dragexit",(e)=>{
-			if(e.target.style.backgroundColor==="red"){
-				e.target.style.backgroundColor="#79d3e8";
-			}
-
-		})
-		
-		document.addEventListener("dragover",(e)=>{
-			if(e.target.className==="column"){
-			e.target.style.backgroundColor="red";
-		}
-		})
-		document.addEventListener("drop",(e)=>{
-			e.prevenDefault();
-			e.target.style.backgroundColor="red";
-		}) -->

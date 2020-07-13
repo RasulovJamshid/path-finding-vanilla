@@ -1,4 +1,4 @@
-#root{
+	#root{
 		display: flex;
 		flex-direction:column;
 	}
@@ -14,8 +14,8 @@
 		height:20px;
 		margin: 1px;
 		/*background-color:#79d3e8;*/
-		/*border:1px solid black;*/
-		/*box-shadow: 0px 0px 1px 1px #16a39c;*/
+		border:1px solid black;
+		box-shadow: 0px 0px 1px 1px #16a39c;
 	}
 	.end{
 		width:20px;

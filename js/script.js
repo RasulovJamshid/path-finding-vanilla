@@ -1,3 +1,4 @@
+
 let gridSize = 15;
 let state = 3; //active button type to create wall|end|start
 
@@ -14,9 +15,7 @@ for (let i = 0; i < gridSize; i++) {
   for (let j = 0; j < gridSize; j++) {
     let col = document.createElement("span");
 
-    if (j >= 5 && i === 5) {
-      col.className = "wall";
-    } else {
+    
       col.className = "column";
       col.addEventListener("click", () => {
         switch (state) {
@@ -37,6 +36,12 @@ for (let i = 0; i < gridSize; i++) {
               end[1] = col.dataset.column;
             }
             break;
+         case 4:
+            {
+              col.style.backgroundColor = "white";
+              col.className = "column";
+            }
+            break;
 
           default:
             {
@@ -46,7 +51,7 @@ for (let i = 0; i < gridSize; i++) {
             ;
         }
       });
-    }
+    
 
     col.ondragstart = "event.dataTransfer.setData('text/plain',null)";
     col.draggable = "true";
@@ -73,6 +78,11 @@ function markNode(e) {
     case "btn2":
       {
         state = 2;
+      }
+      break;
+    case "btn4":
+      {
+        state = 4;
       }
       break;
 
@@ -110,8 +120,9 @@ function actionListener() {
     setTimeout(() => root.childNodes[result[i].x].childNodes[result[i].y].style.backgroundColor = "green", i * 50);
   }
 }
-	//path-finding function end
+  //path-finding function end
 
-		
-	    
-
+function clearColumns(){
+  root.childNodes.forEach(i=>i.childNodes.forEach(j=>{j.className="column";j.style.backgroundColor="white";}))
+}
+      
