@@ -1,18 +1,21 @@
-
-let gridSize = 15;
+let gridSize = [15,15];
 let state = 3; //active button type to create wall|end|start
-
 let start = [0, 0];
 let end = [0, 0];
 var root = document.getElementById("root");
 let id = 1; //grid Creation
+let winHeight=window.innerHeight;
+let winWidth=window.innerWidth;
 
-for (let i = 0; i < gridSize; i++) {
+gridSize[1]=parseInt(winWidth/20,10)-10;
+gridSize[0]=parseInt(winHeight/20,10)-10;
+
+for (let i = 0; i < gridSize[0]; i++) {
   let row = document.createElement("div");
   row.className = "row";
   row.dataset.row = i;
 
-  for (let j = 0; j < gridSize; j++) {
+  for (let j = 0; j < gridSize[1]; j++) {
     let col = document.createElement("span");
 
     
@@ -45,7 +48,7 @@ for (let i = 0; i < gridSize; i++) {
 
           default:
             {
-              col.style.backgroundColor = "gray";
+              col.style.backgroundColor = "#1f1e1ea6";
               col.className = "wall";
             }
             ;
@@ -53,8 +56,6 @@ for (let i = 0; i < gridSize; i++) {
       });
     
 
-    col.ondragstart = "event.dataTransfer.setData('text/plain',null)";
-    col.draggable = "true";
     col.dataset.column = j;
     row.appendChild(col);
   }
@@ -97,8 +98,8 @@ btnGroup.childNodes.forEach(i => i.addEventListener("click", markNode)); //path-
 function actionListener() {
   let grid = [];
 
-  for (var i = 0; i < gridSize; i++) {
-    for (var j = 0; j < gridSize; j++) {
+  for (var i = 0; i < gridSize[0]; i++) {
+    for (var j = 0; j < gridSize[1]; j++) {
       grid.push([]);
 
       if (root.childNodes[i].childNodes[j].className === "wall") {

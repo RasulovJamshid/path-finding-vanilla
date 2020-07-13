@@ -1,6 +1,7 @@
 	#root{
 		display: flex;
 		flex-direction:column;
+		margin:20px;
 	}
 	.row{
 		width: 100%
@@ -9,41 +10,39 @@
 		flex-direction: row;
 		justify-content: center
 	}
-	.column{
+	.column, .end, .start, .wall{
 		width:20px;
 		height:20px;
-		margin: 1px;
-		/*background-color:#79d3e8;*/
-		border:1px solid black;
-		box-shadow: 0px 0px 1px 1px #16a39c;
+		/*margin: 1px;*/
+		border:1px solid gray;
+	}
+	.column{
+		background-color:#fff;
 	}
 	.end{
-		width:20px;
-		height:20px;
-		margin: 1px;
 		background-color:green;
-		border:1px solid black;
-		box-shadow: 0px 0px 1px 1px #16a39c;
 	}
 	.start{
-		width:20px;
-		height:20px;
-		margin: 1px;
 		background-color:red;
-		border:1px solid black;
-		box-shadow: 0px 0px 1px 1px #16a39c;
 	}
 
 	.wall{
-		width:20px;
-		height:20px;
-		margin: 1px;
-		background-color:gray;
-		border:1px solid black;
-		box-shadow: 0px 0px 1px 1px #16a39c;
+		background-color:#1f1e1ea6;
 	}
 	.column:hover{
 		background-color:#ff181894;
 		box-shadow: 0px 0px 1px 1px #ff181894;
 
+	}
+	#btnGroup{
+      left:0;
+      bottom:0;
+      position: absolute;
+      margin: 20px
+	}
+	#btnGroup2{
+      right:0;
+      bottom:0;
+      position: absolute;
+      margin: 20px
 	}
