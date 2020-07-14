@@ -7,8 +7,8 @@ let id = 1; //grid Creation
 let winHeight=window.innerHeight;
 let winWidth=window.innerWidth;
 
-gridSize[1]=parseInt(winWidth/20,10)-10;
-gridSize[0]=parseInt(winHeight/20,10)-10;
+gridSize[1]=parseInt(winWidth/20,10)-5;
+gridSize[0]=parseInt(winHeight/20,10)-5;
 
 for (let i = 0; i < gridSize[0]; i++) {
   let row = document.createElement("div");
@@ -118,7 +118,7 @@ function actionListener() {
   let result = astar.search(graph, startPoint, endPoint);
 
   for (let i = 0; i < result.length - 1; i++) {
-    setTimeout(() => root.childNodes[result[i].x].childNodes[result[i].y].style.backgroundColor = "green", i * 50);
+    setTimeout(() => root.childNodes[result[i].x].childNodes[result[i].y].style.backgroundColor = "rgb(80, 237,229)", i * 50);
   }
 }
   //path-finding function end
